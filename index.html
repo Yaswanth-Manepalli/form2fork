@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Farm2Fork – Fresh From Local Farmers</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HERO / POSTER -->
+  <header class="hero">
+    <img class="poster" src="3.jpg" alt="Farm2Fork Poster" />
+    <div class="hero-overlay">
+      <h1>Farm2Fork</h1>
+      <p>Connecting local farmers with urban families – fresh, fair, and transparent.</p>
+      <a href="#shop" class="cta">Shop Fresh Produce</a>
+    </div>
+  </header>
+
+  <!-- PROBLEM + IDEA -->
+  <section class="problem-idea container">
+    <div class="card gradient-green">
+      <h2>🌱 Problem</h2>
+      <p>
+        Many small-scale farmers struggle to reach urban consumers. Middlemen take a large cut and
+        farmers lack digital tools to showcase their goods or connect with buyers.
+      </p>
+    </div>
+    <div class="card gradient-orange">
+      <h2>💡 Farm2Fork</h2>
+      <p>
+        A direct-to-consumer marketplace: farmers list produce, set prices, manage orders, and build trust with
+        real profiles, reviews, and transparent delivery tracking.
+      </p>
+    </div>
+  </section>
+
+  <!-- FILTERS -->
+  <section id="shop" class="filters container card">
+    <h2>Browse Produce</h2>
+    <div class="filters-row">
+      <label>
+        Category
+        <select id="filter-category">
+          <option value="all">All</option>
+          <option value="vegetables">Vegetables</option>
+          <option value="fruits">Fruits</option>
+          <option value="grains">Grains</option>
+        </select>
+      </label>
+
+      <label>
+        Max Price ($)
+        <input id="filter-price" type="range" min="1" max="20" value="20" />
+        <span id="filter-price-value">20</span>
+      </label>
+
+      <label>
+        Location
+        <select id="filter-location">
+          <option value="all">Anywhere</option>
+          <option value="Andhra Pradesh">Andhra Pradesh</option>
+          <option value="Telangana">Telangana</option>
+          <option value="Karnataka">Karnataka</option>
+          <option value="Maharashtra">Maharashtra</option>
+        </select>
+      </label>
+
+      <input id="search" class="search" type="text" placeholder="Search produce or farmer…" />
+    </div>
+  </section>
+
+  <!-- PRODUCT LIST -->
+  <section class="container">
+    <div id="products" class="grid"></div>
+  </section>
+
+  <!-- CART + ORDER TRACKING -->
+  <section class="container two-col">
+    <div class="card cart">
+      <h2>🛒 Cart</h2>
+      <ul id="cart-list" class="cart-list"></ul>
+      <div class="cart-summary">
+        <span id="cart-items">0 items</span>
+        <strong id="cart-total">$0.00</strong>
+      </div>
+      <button id="checkout" class="btn-primary">Checkout</button>
+    </div>
+
+    <div class="card tracking">
+      <h2>🚚 Order Tracking</h2>
+      <div id="no-order">No active order. Add items and checkout to start tracking.</div>
+
+      <div id="order-panel" class="hidden">
+        <div class="order-meta">
+          <div><strong>Order #</strong> <span id="order-id"></span></div>
+          <div><strong>ETA</strong> <span id="order-eta"></span></div>
+        </div>
+        <ol class="tracker">
+          <li data-step="1">Processing</li>
+          <li data-step="2">Packed</li>
+          <li data-step="3">Shipped</li>
+          <li data-step="4">Out for Delivery</li>
+          <li data-step="5">Delivered</li>
+        </ol>
+        <div class="tracker-actions">
+          <button id="advance" class="btn-ghost">Advance Status</button>
+          <button id="reset" class="btn-ghost">Reset</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FARMER PROFILES -->
+  <section class="container">
+    <h2 class="section-title">Featured Farmers</h2>
+    <div id="farmers" class="grid grid-3"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© <span id="year"></span> Farm2Fork · Made with 💚 for local communities</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
